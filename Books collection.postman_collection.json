@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "3a53c2b3-7092-41dc-8bdc-293e281f1c57",
+		"name": "Books collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\naddBook(name: \"name\", description:\"test\" numberOfPages: 123,publishedAt: \"1993/10/12\"){\r\n    id\r\n    name\r\n    description\r\n    numberOfPages\r\n    publishedAt\r\n}\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\ndeleteBook(id: \"3\"){\r\n    id\r\n    name\r\n    description\r\n    numberOfPages\r\n    publishedAt\r\n}\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\naddStudent(name: \"name\", lastName: \"last\", email: \"email.com\", dateOfBirth: \"1992/05/12\"){\r\n    id\r\n    name\r\n    lastName\r\n    email\r\n    dateOfBirth\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\ndeleteStudent(id: \"3\"){\r\n    id\r\n    name\r\n    lastName\r\n    email\r\n    dateOfBirth\r\n}\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\nstudent(id: \"2\"){\r\n    id\r\n    name\r\n    lastName\r\n    email\r\n    dateOfBirth\r\n    books {\r\n        id\r\n        name\r\n        description\r\n        numberOfPages\r\n        publishedAt\r\n    }\r\n}\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\nbook(id: \"2\"){\r\n    id\r\n    name\r\n    description\r\n    numberOfPages\r\n    publishedAt\r\n    students {\r\n        id\r\n        name\r\n        lastName\r\n        email\r\n        dateOfBirth\r\n    }\r\n}\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "relate book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\nrelateBook(studentId: \"2\", bookId: \"1\"){\r\n   id\r\n    name\r\n    lastName\r\n    email\r\n    dateOfBirth\r\n    books {\r\n        id\r\n        name\r\n        description\r\n        numberOfPages\r\n        publishedAt\r\n    }\r\n}\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
